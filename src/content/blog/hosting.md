@@ -3,7 +3,6 @@ title: "Web Hosting"
 description: "What happens behind the website you see"
 pubDate: "Feb 12, 2025"
 ---
-
 # Web Hosting: From Development to Production
 
 This post explores the journey of a web application from development to production, focusing on hosting and the technologies involved. We'll use a React frontend and Node.js backend as an example.
