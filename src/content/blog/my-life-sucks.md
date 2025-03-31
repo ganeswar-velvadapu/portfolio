@@ -43,6 +43,6 @@ This rollercoaster of a day taught me several valuable lessons:
 
 The journey from a simple configuration tweak to a full Arch Linux install was a wild ride. While I wouldn't recommend replicating my mistakes, I'm grateful for the experience. It reinforced the importance of careful planning, thorough backups, and the incredible support of friends.
 
-So, to all the Linux enthusiasts out there, learn from my mistakes, embrace the challenges, and never underestimate the power of a well-placed backup. And if you need to contact Kamal Koushik Duppalapudi, my linux saviour, you can reach out to me, as he has no website.
+So, to all the Linux enthusiasts out there, learn from my mistakes, embrace the challenges, and never underestimate the power of a well-placed backup. And special thanks to  Kamal Koushik Duppalapudi, my linux saviour, you can reach out me if you want to contact him as he doesn't have a website
 
 Keep coding, keep learning, and remember to push your code!
