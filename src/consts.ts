@@ -7,7 +7,7 @@ export const KNOWN_TECH =
     ",",
   );
 export const ABOUT_ME =
-  `COMING SOON`.trim();
+  `HEAD OF LAMBDA IIT HYDERABAD`.trim();
 export const GITHUB_USERNAME = "ganeswar-velvadapu";
 export const QUOTE = "...";
 export const NAV_LINKS: Array<{ title: string; href?: string }> = [
