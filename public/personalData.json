@@ -1,0 +1,68 @@
+{
+  "education": [
+    {
+      "degree": "B.Tech Materials Science & Metallurgical Engineering",
+      "institution": "IIT Hyderabad",
+      "year": "2027",
+      "cgpa": "7.51"
+    },
+    {
+      "degree": "XII (Board of Intermediate Education)",
+      "institution": "Sri Chaintanya Junior College",
+      "year": "2023",
+      "cgpa": "97.50%"
+    },
+    {
+      "degree": "X (Board of Secondary Education)",
+      "institution": "Dr. K.K.R's Gowtham High School",
+      "year": "2021",
+      "cgpa": "99.30%"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Web Developer",
+      "company": "MSME Department, Civil Department, Smith Lab, Smart X",
+      "location": "IIT Hyderabad",
+      "points": [
+        "Integrated a leading open-source admin panel, customizing the Next.js frontend to unify content management across IIT Hyderabad departments",
+        "Containerized the full application stack using Docker and configured an NGINX reverse proxy for secure, scalable deployment",
+        "Architected an integrated payload CMS, unifying content delivery for four separate research labs"
+      ]
+    },
+    {
+      "role": "Frontend Developer",
+      "company": "NANOX",
+      "location": "IIT Hyderabad",
+      "points": [
+        "Engineered the frontend for the NANOX research group with React and deployed the live application on AWS EC2",
+        "Implemented a Google Docs API integration to function as a simplified CMS, empowering professors to directly manage website content"
+      ]
+    }
+  ],
+  "positions": [
+    {
+      "title": "Head of Web Development & Web Manager",
+      "org": "E-Cell, IIT Hyderabad",
+      "description": "Spearheaded the end-to-end overhaul of the official E-Cell website with clean, maintainable codebase. Engineered Google App Scripts to automate registration processes."
+    },
+    {
+      "title": "Overall Head & Core Member",
+      "org": "Lambda (Software Development Club), IIT Hyderabad",
+      "description": "Led complete redesign of Glitch E-Sports club website and official IITH Dashboard. Developed KRC mobile application frontend using Flutter."
+    }
+  ],
+  "skills": {
+    "Languages": ["Go Lang", "Python", "Dart", "C/C++", "SQL", "JavaScript", "HTML/CSS"],
+    "Frameworks": ["Go/Gin", "Flutter", "React", "Express JS", "FastAPI", "Next JS", "Node JS"],
+    "AI/ML": ["LangChain", "RAG", "Vector Databases"],
+    "Tools": ["Git", "Docker", "AWS", "PostgreSQL"]
+  },
+  "achievements": [
+    {
+      "title": "3rd Place - MILAN Hackathon 2024",
+      "organization": "Lambda IIT Hyderabad",
+      "description": "Developed a Community App for IIT Hyderabad, placing 3rd among competing teams in this prestigious hackathon."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+    "projects": [
+        {
+            "name": "Startup Studio",
+            "description": "A comprehensive platform connecting startups with experienced mentors across various domains. Find the expertise you need to grow your venture, from technical guidance to business strategy.",
+            "github": "https://github.com/E-Cell-IITH/startup_studio",
+            "technologies": [
+                "Go",
+                "Gin",
+                "React",
+                "PostgreSQL",
+                "Docker",
+                "AWS"
+            ]
+        },
+        {
+            "name": "IITH Dashboard",
+            "description": "An all-in-one utility application designed for IIT Hyderabad students. Features include real-time campus bus tracking, interactive campus maps, personalized timetables, cab sharing coordination, and a lost & found system.",
+            "github": "https://github.com/LambdaIITH/Dashboard",
+            "technologies": [
+                "React",
+                "Node.js",
+                "Express",
+                "MongoDB"
+            ]
+        },
+        {
+            "name": "CampusNet",
+            "description": "A social networking app exclusively for IIT Hyderabad students. Connect with peers across different degrees, branches, batches, and hostels. Features include advanced filtering, direct messaging, and community building tools.",
+            "github": "https://github.com/ganeswar-velvadapu/milan-24_25",
+            "technologies": [
+                "Flutter",
+                "Dart",
+                "Firebase"
+            ]
+        },
+        {
+            "name": "Bioverse",
+            "description": "A full-stack, cross-platform application connecting social causes with NGOs. Built with Flutter for seamless experience across web, mobile, and desktop platforms.",
+            "github": "https://github.com/ganeswar-velvadapu/bioverse",
+            "technologies": [
+                "Flutter",
+                "Python",
+                "FastAPI",
+                "JWT"
+            ]
+        },
+        {
+            "name": "NPCI Hackathon Project",
+            "description": "A full-stack e-commerce platform with secure authentication, role-based access control, order processing, and customer loyalty rewards system.",
+            "github": "https://github.com/ganeswar-velvadapu/ecell",
+            "technologies": [
+                "React",
+                "Node.js",
+                "Express",
+                "PostgreSQL",
+                "JWT"
+            ]
+        }
+    ]
+}
