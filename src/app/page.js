@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import HomeAbout from '@/components/homecomponents/HomeAbout';
 import Homeblogs from '@/components/homecomponents/Homeblogs';
 import HomeHero from '@/components/homecomponents/HomeHero';
@@ -13,10 +13,10 @@ export default function Home() {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const roles = [
-    'Developer',
-    'Aspiring DevOps Engineer',
-    'Web Designer',
-    'Tech Enthusiast'
+    "Developer",
+    "Aspiring DevOps Engineer",
+    "Web Designer",
+    "Tech Enthusiast"
   ];
 
   useEffect(() => {

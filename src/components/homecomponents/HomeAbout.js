@@ -15,13 +15,13 @@ const HomeAbout = () => {
 
             {/* About Description */}
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-300 mb-4 sm:mb-6 text-center lg:text-left px-2">
-                I'm a <span className="text-white font-semibold">highly passionate tech enthusiast</span> with
+                I&apos;m a <span className="text-white font-semibold">highly passionate tech enthusiast</span> with
                 extensive experience in <span className="text-white font-semibold">backend development</span>.
                 I thrive on building scalable, efficient systems and solving complex technical challenges.
             </p>
 
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-300 mb-6 sm:mb-8 text-center lg:text-left px-2">
-                Beyond backend development, I'm continuously exploring emerging technologies, cloud infrastructure,
+                Beyond backend development, I&apos;m continuously exploring emerging technologies, cloud infrastructure,
                 and DevOps practices. I believe in writing clean, maintainable code and creating solutions that
                 make a real impact.
             </p>

@@ -100,7 +100,7 @@ const ProjectsPage = () => {
             <p className="text-sm sm:text-base text-gray-400">
               Want to collaborate on a project? 
               <Link href="/contact" className="text-white font-semibold hover:underline ml-1">
-                Let's talk!
+                Let&apos;s talk!
               </Link>
             </p>
           </div>
