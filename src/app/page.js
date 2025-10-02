@@ -3,6 +3,7 @@ import HomeAbout from '@/components/homecomponents/HomeAbout';
 import Homeblogs from '@/components/homecomponents/Homeblogs';
 import HomeHero from '@/components/homecomponents/HomeHero';
 import HomeProjects from '@/components/homecomponents/HomeProjects';
+import ScrollRevealName from '@/components/homecomponents/ScrollReval';
 
 import React, { useState, useEffect } from 'react';
 
@@ -46,7 +47,9 @@ export default function Home() {
   return (
     <div className="bg-zinc-900">
       <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-12  md:py-20 gap-8 sm:gap-10 md:gap-12 lg:gap-20">
+        <ScrollRevealName/>
         {/* Left Side - Hero/Intro */}
+
         <HomeHero text={text} />
 
         {/* Right Side - About */}
