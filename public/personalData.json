@@ -26,8 +26,7 @@
       "location": "IIT Hyderabad",
       "points": [
         "Integrated a leading open-source admin panel, customizing the Next.js frontend to unify content management across IIT Hyderabad departments",
-        "Containerized the full application stack using Docker and configured an NGINX reverse proxy for secure, scalable deployment",
-        "Architected an integrated payload CMS, unifying content delivery for four separate research labs"
+        "Containerized the full application stack using Docker and configured an NGINX reverse proxy for secure, scalable deployment"
       ]
     },
     {
@@ -44,12 +43,16 @@
     {
       "title": "Head of Web Development & Web Manager",
       "org": "E-Cell, IIT Hyderabad",
-      "description": "Spearheaded the end-to-end overhaul of the official E-Cell website with clean, maintainable codebase. Engineered Google App Scripts to automate registration processes."
+      "points": [
+        "Spearheaded the end-to-end overhaul of the official E-Cell website with clean, maintainable codebase. Engineered Google App Scripts to automate registration processes."
+      ]
     },
     {
       "title": "Overall Head & Core Member",
       "org": "Lambda (Software Development Club), IIT Hyderabad",
-      "description": "Led complete redesign of Glitch E-Sports club website and official IITH Dashboard. Developed KRC mobile application frontend using Flutter."
+      "points": [
+        "Led complete redesign of Glitch E-Sports club website and official IITH Dashboard. Developed KRC mobile application frontend using Flutter."
+      ]
     }
   ],
   "skills": {

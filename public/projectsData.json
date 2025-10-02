@@ -42,7 +42,8 @@
                 "Flutter",
                 "Python",
                 "FastAPI",
-                "JWT"
+                "JWT",
+                "PostgreSQL"
             ]
         },
         {

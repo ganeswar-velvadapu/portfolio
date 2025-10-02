@@ -69,7 +69,13 @@ const AboutPage = () => {
               <div key={index} className="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg p-6 transition-all duration-300">
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">{pos.title}</h3>
                 <p className="text-base text-gray-300 mb-3">{pos.org}</p>
-                <p className="text-sm sm:text-base text-gray-400">{pos.description}</p>
+                <ul className="space-y-2">
+                  {pos.points.map((point, idx) => (
+                    <li key={idx} className="text-sm sm:text-base text-gray-400 pl-4 border-l-2 border-gray-600">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
