@@ -1,19 +1,29 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Calendar, ArrowLeft, Tag } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import blogData from '../../../../public/blogData.json';
-
-
+import ReactMarkdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/github-dark.css';
 
 const BlogPost = ({ params }) => {
-
   const blog = blogData.blogs.find((b) => b.id === params.id);
+  const [content, setContent] = useState('');
 
   if (!blog) {
     notFound();
   }
+
+  useEffect(() => {
+    if (blog.markdown) {
+      fetch(blog.markdown)
+        .then((res) => res.text())
+        .then((text) => setContent(text))
+        .catch((err) => console.error('Error loading markdown:', err));
+    }
+  }, [blog.markdown]);
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -23,7 +33,6 @@ const BlogPost = ({ params }) => {
   return (
     <div className="min-h-screen bg-zinc-900 py-12 sm:py-16 md:py-20">
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Back Button */}
         <Link
           href="/blogs"
           className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 mb-8"
@@ -32,20 +41,17 @@ const BlogPost = ({ params }) => {
           Back to Blogs
         </Link>
 
-        {/* Blog Header */}
         <header className="mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 sm:mb-6 text-white">
             {blog.title}
           </h1>
-          
           <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-6">
             <div className="flex items-center gap-2">
               <Calendar size={16} />
-              <span>{formatDate(blog.date)}</span>
+              <span>{formatDate(blog.published_date)}</span>
             </div>
             {blog.author && <span>By {blog.author}</span>}
           </div>
-
           {blog.tags && (
             <div className="flex flex-wrap items-center gap-2">
               <Tag size={16} className="text-gray-400" />
@@ -61,20 +67,41 @@ const BlogPost = ({ params }) => {
           )}
         </header>
 
-        {/* Divider */}
         <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-8 sm:mb-12"></div>
 
-        {/* Blog Content */}
-        <div className="prose prose-invert prose-lg max-w-none">
-          <div className="text-gray-300 leading-relaxed whitespace-pre-line">
-            {blog.description}
-          </div>
+        {/* Updated prose classes with more specific configuration */}
+        <div className="prose prose-invert prose-lg prose-headings:text-white prose-p:text-gray-300 prose-a:text-blue-400 prose-strong:text-white prose-code:text-gray-200 prose-pre:bg-zinc-800 prose-blockquote:text-gray-400 max-w-none">
+          {content ? (
+            <ReactMarkdown 
+              rehypePlugins={[rehypeHighlight]}
+              components={{
+                h1: ({node, ...props}) => <h1 className="text-3xl font-bold mt-8 mb-4 text-white" {...props} />,
+                h2: ({node, ...props}) => <h2 className="text-2xl font-semibold mt-6 mb-3 text-white" {...props} />,
+                h3: ({node, ...props}) => <h3 className="text-xl font-semibold mt-4 mb-2 text-white" {...props} />,
+                p: ({node, ...props}) => <p className="text-gray-300 leading-7 mb-4" {...props} />,
+                ul: ({node, ...props}) => <ul className="list-disc ml-6 mb-4 text-gray-300" {...props} />,
+                ol: ({node, ...props}) => <ol className="list-decimal ml-6 mb-4 text-gray-300" {...props} />,
+                li: ({node, ...props}) => <li className="mb-2" {...props} />,
+                a: ({node, ...props}) => <a className="text-blue-400 hover:text-blue-300 underline" {...props} />,
+                code: ({node, inline, ...props}) => 
+                  inline ? (
+                    <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-gray-200" {...props} />
+                  ) : (
+                    <code {...props} />
+                  ),
+                blockquote: ({node, ...props}) => (
+                  <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-400 my-4" {...props} />
+                ),
+              }}
+            >
+              {content}
+            </ReactMarkdown>
+          ) : (
+            <p className="text-gray-400">Loading content...</p>
+          )}
         </div>
 
-        {/* Footer Divider */}
         <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mt-12 sm:mt-16 mb-8"></div>
-
-       
       </article>
     </div>
   );
