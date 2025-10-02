@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Instagram, Linkedin, Github } from 'lucide-react';
+import { Instagram, Linkedin, Github, Book } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Copyright */}
           <div className="text-sm md:text-base text-gray-300 text-center md:text-left">
-            © {new Date().getFullYear()} Ganeswar Velvadapu. All rights reserved.
+            © {new Date().getFullYear()} Ganeswar Velvadapu. All rights reserved. Code is licensed under the MIT License.
           </div>
 
           {/* Social Icons */}
@@ -40,6 +40,15 @@ export default function Footer() {
               aria-label="GitHub"
             >
               <Github size={22} />
+            </a>
+            <a
+              href="https://hardcover.app/@ganeswar1109"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              aria-label="Hardcover"
+            >
+              <Book size={22} /> 
             </a>
           </div>
         </div>

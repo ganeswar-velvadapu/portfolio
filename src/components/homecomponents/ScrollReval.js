@@ -54,7 +54,7 @@ export default function CursorRevealName() {
           {name.split('').map((char, index) => {
             const isSpace = char === ' ';
             const distance = getDistanceFromCursor(lettersRef.current[index]);
-            const revealRadius = 250; // Distance in pixels for full reveal
+            const revealRadius = 200; // Distance in pixels for full reveal
             const opacity = isSpace ? 0 : Math.max(0.05, 1 - (distance / revealRadius));
             const scale = isSpace ? 1 : 0.95 + (opacity * 0.05);
             const brightness = 0.3 + (opacity * 1.2);
