@@ -61,7 +61,7 @@ const BlogsPage = () => {
                 >
                   <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400 mb-3">
                     <Calendar size={14} />
-                    <span>{formatDate(blog.date)}</span>
+                    <span>{formatDate(blog.published_date)}</span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 group-hover:text-gray-100 transition-colors">
                     {blog.title}
