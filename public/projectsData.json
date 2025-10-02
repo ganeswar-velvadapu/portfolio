@@ -18,10 +18,10 @@
             "description": "An all-in-one utility application designed for IIT Hyderabad students. Features include real-time campus bus tracking, interactive campus maps, personalized timetables, cab sharing coordination, and a lost & found system.",
             "github": "https://github.com/LambdaIITH/Dashboard",
             "technologies": [
-                "React",
-                "Node.js",
-                "Express",
-                "MongoDB"
+                "Flutter",
+                "Firebase",
+                "FastAPI",
+                "PostgreSQL"
             ]
         },
         {
@@ -29,9 +29,9 @@
             "description": "A social networking app exclusively for IIT Hyderabad students. Connect with peers across different degrees, branches, batches, and hostels. Features include advanced filtering, direct messaging, and community building tools.",
             "github": "https://github.com/ganeswar-velvadapu/milan-24_25",
             "technologies": [
-                "Flutter",
-                "Dart",
-                "Firebase"
+                "EJS",
+                "Express",
+                "MongoDB"
             ]
         },
         {
