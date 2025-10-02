@@ -43,7 +43,7 @@ const Homeblogs = () => {
                                 {/* Date */}
                                 <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400 mb-3">
                                     <Calendar size={14} />
-                                    <span>{formatDate(blog.date)}</span>
+                                    <span>{formatDate(blog.published_date)}</span>
                                 </div>
 
                                 {/* Blog Title */}
@@ -63,10 +63,10 @@ const Homeblogs = () => {
                                 </div>
                             </Link>
                         ))}
-                        
+
                     </div>
 
-                   
+
                 </div>
             </div>
         </div>
