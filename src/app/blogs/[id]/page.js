@@ -10,21 +10,38 @@ import 'highlight.js/styles/github-dark.css';
 import remarkGfm from 'remark-gfm';
 
 const BlogPost = ({ params }) => {
-  const blog = blogData.blogs.find(async (b) => await b.id === params.id);
+  const [blog, setBlog] = useState(null);
   const [content, setContent] = useState('');
 
-  if (!blog) {
-    notFound();
-  }
+  useEffect(() => {
+    const loadBlog = async () => {
+      const resolvedParams = await params;
+      const foundBlog = blogData.blogs.find((b) => b.id === resolvedParams.id);
+
+      if (!foundBlog) {
+        notFound();
+      }
+
+      setBlog(foundBlog);
+    };
+
+    loadBlog();
+  }, [params]);
 
   useEffect(() => {
-    if (blog.markdown) {
+    if (blog?.markdown) {
       fetch(blog.markdown)
         .then((res) => res.text())
         .then((text) => setContent(text))
         .catch((err) => console.error('Error loading markdown:', err));
     }
-  }, [blog.markdown]);
+  }, [blog]);
+
+  if (!blog) {
+    return <div className="min-h-screen bg-zinc-900 flex items-center justify-center">
+      <p className="text-gray-400">Loading...</p>
+    </div>;
+  }
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
