@@ -1,15 +1,5 @@
 {
   "blogs": [
-    {
-      "id": "test-blog",
-      "title": "Markdown Syntax Help",
-      "author": "Ganeswar Velvadapu",
-      "markdown": "/blogs/test-blog.md",
-      "published_date": "2025-10-01",
-      "shortDescription": "Markdown Syntax for Beginners.",
-      "tags": [
-        "Makrdown file"
-      ]
-    }
+   
   ]
 }
