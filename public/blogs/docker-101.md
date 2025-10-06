@@ -162,11 +162,20 @@ docker run --name my-friends-app-container your-friends-app
 
 ---
 
-### What's Next?
+---
 
-This is just the start of your Docker journey! Next, you can explore advanced topics like **Port Binding/Forwarding**, **Networks**, and **Docker Compose**.
+### 🚀 What's Next?
 
-Happy Containerizing! 🚢
+This is just the beginning of your Docker journey! We've covered the fundamentals, but there's so much more to explore.
+
+**Next week's blog will dive into:**
+- **Port Binding/Forwarding** - Connecting your containerized apps to the real world
+- **Docker Networks** - Making your containers talk to each other
+- **Docker Volumes** - Keeping your data safe even when containers restart
+
+Stay tuned for next week's blog where we'll level up your Docker skills! 
+
+Happy Containerizing! 
 
 ---
 
