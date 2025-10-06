@@ -1,5 +1,16 @@
 {
   "blogs": [
-   
+    {
+      "id": "docker-basics",
+      "title": "Docker 101 - Getting Started",
+      "author": "Ganeswar Velvadapu",
+      "markdown": "/blogs/docker-101.md",
+      "published_date": "2025-10-07",
+      "shortDescription": "Docker for beginners",
+      "tags": [
+        "Devops",
+        "Docker"
+      ]
+    }
   ]
 }
