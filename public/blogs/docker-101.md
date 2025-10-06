@@ -214,5 +214,3 @@ docker pull your-friends-app
 ```
 
 ---
-
-*Stay tuned for next week's blog where we'll dive deeper into Docker Port Binding and Networks!*
