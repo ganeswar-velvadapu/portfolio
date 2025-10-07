@@ -123,7 +123,7 @@ const ContactForm = () => {
           <button
             onClick={handleSubmit}
             disabled={submissionStatus === 'submitting'}
-            className="w-full bg-white text-black font-medium py-2 px-4 rounded-lg transition-colors duration-200 disabled:bg-gray-800 disabled:cursor-not-allowed"
+            className="w-full cursor-pointer bg-white text-black font-medium py-2 px-4 rounded-lg transition-colors duration-200 disabled:bg-gray-800 disabled:cursor-not-allowed"
           >
             {submissionStatus === 'submitting' ? 'Submitting...' : 'Submit'}
           </button>
@@ -131,19 +131,19 @@ const ContactForm = () => {
       </div>
 
       {showSuccessModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div className="fixed inset-0 backdrop-blur-lg bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-zinc-800 rounded-lg shadow-xl p-8 max-w-sm w-full">
             <div className="text-center">
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
+                </svg> 
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Success!</h3>
               <p className="text-zinc-300 mb-6">Your message has been submitted successfully.</p>
               <button
                 onClick={handleSuccessModalClose}
-                className="w-full bg-white text-black font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+                className="w-full cursor-pointer bg-white text-black font-medium py-2 px-4 rounded-lg transition-colors duration-200"
               >
                 Close
               </button>
