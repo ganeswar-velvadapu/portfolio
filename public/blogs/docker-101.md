@@ -1,5 +1,3 @@
-## Docker 101 - Taming Dependency Chaos! 
-
 Ever heard a developer say, **"It works on my machine!"** right before deployment fails? That's the classic software development struggle! Docker is the solution to this exact problem.
 
 Let's dive into the basics of what Docker is, how it solves the problem, and the commands you need to get started.
@@ -10,9 +8,9 @@ Let's dive into the basics of what Docker is, how it solves the problem, and the
 
 Imagine you're building an application (say, with Node.js).
 
-- **Your machine (Laptop)**: You write code, and it runs perfectly on your specific Node version and dependencies.
+- **Your machine (Laptop)**: You write code, and it runs perfectly on your machine with specific Node version and dependencies.
 - **Deployment Server**: You give the code to the deployment team. Their server has a **different Node version**.
-- **The Conflict**: A key dependency in your project requires the exact Node version from your laptop. Upgrading/Downgrading the server's Node isn't an option because other projects on the server rely on the current version.
+- **The Conflict**: A key dependency in your project requires the exact Node version from your laptop. Upgrading/Downgrading the server's Node isn't an option because other projects on the server rely on the current version. 
 
 This difference in environments leads to deployment failure and headaches! 
 
