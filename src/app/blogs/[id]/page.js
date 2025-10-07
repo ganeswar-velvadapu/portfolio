@@ -53,7 +53,7 @@ const BlogPost = ({ params }) => {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/blogs"
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 mb-8"
+          className="inline-flex mt-10 items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 mb-8"
         >
           <ArrowLeft size={18} />
           Back to Blogs

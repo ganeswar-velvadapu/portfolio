@@ -69,11 +69,23 @@ export default function Portfolio() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-zinc-900/95 backdrop-blur-xl border-t border-white/10">
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="bg-zinc-900/95 backdrop-blur-xl border-t border-white/10">
             <ul className="flex flex-col gap-1 py-4 px-6">
-              {navLinks.map((link) => (
-                <li key={link.href}>
+              {navLinks.map((link, index) => (
+                <li
+                  key={link.href}
+                  className={`transform transition-all duration-300 ease-out ${
+                    mobileMenuOpen
+                      ? 'translate-y-0 opacity-100'
+                      : '-translate-y-4 opacity-0'
+                  }`}
+                  style={{ transitionDelay: mobileMenuOpen ? `${index * 50}ms` : '0ms' }}
+                >
                   <Link
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
@@ -83,7 +95,14 @@ export default function Portfolio() {
                   </Link>
                 </li>
               ))}
-              <li className="pt-2">
+              <li
+                className={`pt-2 transform transition-all duration-300 ease-out ${
+                  mobileMenuOpen
+                    ? 'translate-y-0 opacity-100'
+                    : '-translate-y-4 opacity-0'
+                }`}
+                style={{ transitionDelay: mobileMenuOpen ? `${navLinks.length * 50}ms` : '0ms' }}
+              >
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
@@ -94,7 +113,7 @@ export default function Portfolio() {
               </li>
             </ul>
           </div>
-        )}
+        </div>
       </nav>
     </div>
   );
