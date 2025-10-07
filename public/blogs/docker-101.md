@@ -162,7 +162,7 @@ docker run --name my-friends-app-container your-friends-app
 
 ---
 
-### 🚀 What's Next?
+### What's Next?
 
 This is just the beginning of your Docker journey! We've covered the fundamentals, but there's so much more to explore.
 
