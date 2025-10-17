@@ -11,6 +11,19 @@
         "Devops",
         "Docker"
       ]
+    },
+    {
+      "id": "docker-networks",
+      "title": "Docker Networking - A Deep Dive",
+      "author": "Ganeswar Velvadapu",
+      "markdown": "/blogs/docker-networks.md",
+      "published_date": "2025-10-18",
+      "shortDescription": "Networking in docker",
+      "tags": [
+        "Devops",
+        "Docker", 
+        "Networks"
+      ]
     }
   ]
 }
