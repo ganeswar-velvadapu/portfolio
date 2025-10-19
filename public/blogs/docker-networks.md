@@ -8,7 +8,7 @@ In my previous blog, we saw that a Docker container is just like a mini computer
 
 Now think about this analogy:
 - Your laptop is also isolated from the external world
-- If we think of the external world as the host, then your laptop becomes like a small container - a mini computer
+- If we think of the external world as the host, then your laptop becomes a small container - a mini computer
 
 So we can easily understand networks inside a container if we first understand how networks work on your laptop.
 
@@ -20,11 +20,11 @@ Let's break it down:
 
 - **Data travels in packets** - All data on the internet travels in small chunks called packets (if you didn't know this, congrats! You just learned a new concept)
 
-- **Packets need a medium** - There should be a medium for these packets to travel. They can't just magically move around in your laptop. In networking terms, we call this medium an **interface**.
+- **Packets need a medium** - There should be a medium for these packets to travel. They can't just magically move around in your laptop. In networking terms, we call this medium as **network interface**.
 
 - **Interfaces are everywhere** - So packets in your laptop (and actually on any machine on this planet) travel through these interfaces.
 
-- **IP Addresses** – Every device on a network needs a unique address to send and receive packets. This address, called an IP address, works just like a home address — it ensures data reaches the right destination.
+- **IP Addresses** – Every device on a network needs a unique address to send and receive packets. This address, called an IP address, works just like a home address. It ensures data reaches the right destination.
 
 - **The network stack** - These network interfaces, IP addresses, and some other stuff combined together make what we call a **network stack** in your laptop (literally a stack of things).
 
@@ -46,11 +46,11 @@ When you install Docker, a **default bridge** is created with an IP address `172
 
 ### What Happens When You Create a Container?
 
-**Step 1:** A separate network interface is created for the container, which contains a network interface called `eth0`.
+**Step 1:** A separate network namespace is created for the container, which contains a network interface called `eth0`.
 
 **Step 2:** A separate network interface is created called `vethABC` (some random veth name) on the host machine (your laptop).
 
-Okay, so now network interfaces are created, so packets should be able to travel between them, right? But wait - there's no connection here!
+Okay, so now network interfaces are created, so packets should be able to travel between them, right? But wait, there's no connection here!
 
 This is exactly where the **bridge** comes in (notice how the name is similar - "bridge" means connecting something).
 
@@ -99,8 +99,8 @@ In my last blog, I missed one useful command that comes in handy when you're deb
 docker run --name ubuntu-container-1 -itd ubuntu:latest
 ```
 
-- `-it` means run the container in interactive mode
-- `-d` means detached (we saw this in the last blog)
+- `-it` -  run the container in interactive mode
+- `-d` - detached (we saw this in the last blog)
 - Interactive means you can literally go into that container and interact with it (remember how I said a container is a mini computer? Now we'll go inside it and interact with it!)
 
 #### Entering the Container
@@ -115,7 +115,7 @@ Similarly, create `ubuntu-container-2`.
 
 ### Let's Make Them Talk
 
-In order to talk, we need an address - in this case, an IP address.
+In order to communicate, we need an address - in this case, an IP address.
 
 Do this inside both containers:
 
