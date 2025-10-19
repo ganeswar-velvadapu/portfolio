@@ -61,7 +61,7 @@ const ContactForm = () => {
     <div className="min-h-screen bg-zinc-900 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="bg-zinc-800 rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-white mb-6 text-center">Contact Us</h2>
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">Contact</h2>
           
           <div className="mb-4">
             <label htmlFor="name" className="block text-zinc-300 text-sm font-medium mb-2">

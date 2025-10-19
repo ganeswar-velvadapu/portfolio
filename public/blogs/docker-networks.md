@@ -1,5 +1,3 @@
-# Understanding Docker Networking - A Deep Dive
-
 **Prerequisites:** Very basic knowledge of Linux and networking (though I'll try to explain everything from scratch)
 
 **Note:** Whenever I say "container," think of it as a mini computer (as explained in my previous blog)
@@ -64,13 +62,8 @@ This is the default network that you get when you run basic containers, and you'
 
 Here's a basic visualization:
 
-```
-Container 1 (eth0) ←→ veth1 ←→ docker0 bridge ←→ veth2 ←→ Container 2 (eth0)
-                                    ↓
-                                  (NAT)
-                                    ↓
-                              External Network
-```
+
+![Docker networks Visualization](./images/docker-networks-visualization.png)
 
 *(More on NAT in another blog)*
 
@@ -185,7 +178,7 @@ Now these two containers can talk to each other using their container names!
 
 This is all you'll be working with in real life. You don't need to know all the above deep stuff to work on this, but it's good to know because sometimes you might fall into a situation as shown below.
 
-![Debugging Docker Network Issue](./docker-network.png)
+![Debugging Docker Network Issue](./images/docker-network.png)
 
 It's better if you know concepts like these in such situations.
 
