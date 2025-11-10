@@ -1,6 +1,17 @@
 {
     "projects": [
         {
+            "name": "Solana Token Dashboard",
+            "description": "Real Time Solana Token Aggregator is a service that fetches and streams real time meme coin data from multiple DEX sources, DexScreener and GeckoTerminal (Pools endpoint).",
+            "github": "https://github.com/ganeswar-velvadapu/eterna-labs-ps1",
+            "technologies": [
+                "React",
+                "Go Lang",
+                "Redis",
+                "Web Socket"
+            ]
+        },
+        {
             "name": "Startup Studio",
             "description": "A comprehensive platform connecting startups with experienced mentors across various domains. Find the expertise you need to grow your venture, from technical guidance to business strategy.",
             "github": "https://github.com/E-Cell-IITH/startup_studio",
