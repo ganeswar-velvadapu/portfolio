@@ -2,6 +2,7 @@ import React from 'react'
 
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+
 const HomeAbout = () => {
     return (
         <div className="md:flex-1 max-w-full lg:max-w-2xl w-full">
@@ -15,15 +16,14 @@ const HomeAbout = () => {
 
             {/* About Description */}
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-300 mb-4 sm:mb-6 text-center lg:text-left px-2">
-                I&apos;m a <span className="text-white font-semibold">highly passionate tech enthusiast</span> with
-                extensive experience in <span className="text-white font-semibold">backend development</span>.
-                I thrive on building scalable, efficient systems and solving complex technical challenges.
+                I&apos;m a <span className="text-white">Cybersecurity and DevOps enthusiast</span>.  
+                I frequently try to <span className="text-white">fuck my network and laptop</span> just to see what breaks and how to fix it.  
+                I build scalable backend systems.
             </p>
 
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-300 mb-6 sm:mb-8 text-center lg:text-left px-2">
-                Beyond backend development, I&apos;m continuously exploring emerging technologies, cloud infrastructure,
-                and DevOps practices. I believe in writing clean, maintainable code and creating solutions that
-                make a real impact.
+                I love working with <span className="text-white">TypeScript</span> and <span className="text-white">Go Lang</span>.  
+                Also, I use Arch btw.
             </p>
 
             {/* CTA Button */}

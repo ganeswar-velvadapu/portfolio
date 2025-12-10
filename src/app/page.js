@@ -14,11 +14,11 @@ export default function Home() {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const roles = [
-    "Developer",
-    "Aspiring DevOps Engineer",
-    "Web Designer",
-    "Tech Enthusiast"
-  ];
+  "Cybersecurity Enthusiast",
+  "DevOps Practitioner",
+  "Backend Developer",
+];
+
 
   useEffect(() => {
     const handleTyping = () => {
