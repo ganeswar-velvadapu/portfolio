@@ -1,64 +1,168 @@
 "use client";
-import HomeAbout from '@/components/homecomponents/HomeAbout';
-import Homeblogs from '@/components/homecomponents/Homeblogs';
-import HomeHero from '@/components/homecomponents/HomeHero';
-import HomeProjects from '@/components/homecomponents/HomeProjects';
-import ScrollRevealName from '@/components/homecomponents/ScrollReval';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
+import HomeAbout from "@/components/homecomponents/HomeAbout";
+import Homeblogs from "@/components/homecomponents/Homeblogs";
+import HomeHero from "@/components/homecomponents/HomeHero";
+import HomeProjects from "@/components/homecomponents/HomeProjects";
+import ScrollRevealName from "@/components/homecomponents/ScrollReval";
 
 export default function Home() {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopIndex, setLoopIndex] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(150);
+  const [totalContributions, setTotalContributions] = useState(0);
 
   const roles = [
-  "Cybersecurity Enthusiast",
-  "DevOps Practitioner",
-  "Backend Developer",
-];
-
+    "Cybersecurity Enthusiast",
+    "DevOps Practitioner",
+    "Backend Developer",
+  ];
 
   useEffect(() => {
-    const handleTyping = () => {
-      const currentRole = roles[loopIndex % roles.length];
+    const current = roles[loopIndex % roles.length];
+    const timeout = setTimeout(
+      () => {
+        setText(
+          isDeleting
+            ? current.slice(0, text.length - 1)
+            : current.slice(0, text.length + 1)
+        );
 
-      if (isDeleting) {
-        setText(currentRole.substring(0, text.length - 1));
-        setTypingSpeed(50);
-      } else {
-        setText(currentRole.substring(0, text.length + 1));
-        setTypingSpeed(150);
-      }
+        if (!isDeleting && text === current) setIsDeleting(true);
+        if (isDeleting && text === "") {
+          setIsDeleting(false);
+          setLoopIndex(loopIndex + 1);
+        }
+      },
+      isDeleting ? 50 : 120
+    );
 
-      if (!isDeleting && text === currentRole) {
-        setTimeout(() => setIsDeleting(true), 2000);
-      } else if (isDeleting && text === '') {
-        setIsDeleting(false);
-        setLoopIndex(loopIndex + 1);
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, loopIndex]);
+
+  const [weeks, setWeeks] = useState([]);
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    const fetchContributions = async () => {
+      const token = process.env.NEXT_PUBLIC_GITHUB_PERSONAL_ACCESS_TOKEN;
+      const username = "ganeswar-velvadapu";
+
+      const now = new Date();
+      const isCurrentYear = year === now.getFullYear();
+
+      const from = `${year}-01-01T00:00:00Z`;
+      const to = isCurrentYear ? now.toISOString() : `${year}-12-31T23:59:59Z`;
+
+      const query = `
+  query {
+    user(login: "${username}") {
+      contributionsCollection(from: "${from}", to: "${to}") {
+        contributionCalendar {
+          totalContributions
+          weeks {
+            contributionDays {
+              contributionCount
+              date
+            }
+          }
+        }
       }
+    }
+  }
+`;
+
+      const res = await fetch("https://api.github.com/graphql", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      });
+
+      const json = await res.json();
+      const calendar =
+        json.data.user.contributionsCollection.contributionCalendar;
+
+      setWeeks(calendar.weeks);
+      setTotalContributions(calendar.totalContributions);
     };
 
-    const timer = setTimeout(handleTyping, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [text, isDeleting, loopIndex, typingSpeed, roles]);
+    fetchContributions();
+  }, [year]);
+
+  const getColorClass = (count) => {
+    if (count === 0) return "gh-0";
+    if (count < 5) return "gh-1";
+    if (count < 10) return "gh-2";
+    if (count < 20) return "gh-3";
+    return "gh-4";
+  };
 
   return (
-    <div className="bg-zinc-900">
-      <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-12  md:py-20 gap-8 sm:gap-10 md:gap-12 lg:gap-20">
-        <ScrollRevealName/>
-        {/* Left Side - Hero/Intro */}
-
+    <div className="bg-zinc-900 text-white">
+      <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-12 px-6">
+        <ScrollRevealName />
         <HomeHero text={text} />
-
-        {/* Right Side - About */}
         <HomeAbout />
-
       </section>
 
       <HomeProjects />
       <Homeblogs />
+
+      {/* GitHub Contributions */}
+      <div className="px-6 py-24">
+        <div className="max-w-6xl mx-auto flex items-center justify-between mb-4">
+          <div>
+            <h2 className="text-lg font-semibold">GitHub Contributions</h2>
+            <p className="text-sm text-zinc-400">
+              {totalContributions} contributions in {year}
+            </p>
+          </div>
+
+          <select
+            value={year}
+            onChange={(e) => setYear(Number(e.target.value))}
+            className="bg-zinc-800 border border-zinc-700 rounded px-3 py-1 text-sm"
+          >
+            {[...Array(6)].map((_, i) => {
+              const y = new Date().getFullYear() - i;
+              return (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+
+        <div className="overflow-x-auto">
+          <div className="flex justify-center min-w-max">
+            <table className="gh-table">
+              <tbody>
+                {Array.from({ length: 7 }).map((_, day) => (
+                  <tr key={day}>
+                    {weeks.map((week, i) => {
+                      const d = week.contributionDays[day];
+                      const count = d ? d.contributionCount : 0;
+
+                      return (
+                        <td
+                          key={i}
+                          className={`gh-cell ${getColorClass(count)}`}
+                          title={`${count} contributions`}
+                        />
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

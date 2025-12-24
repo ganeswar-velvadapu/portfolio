@@ -1,22 +1,97 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/fonts/Roboto-Regular.woff2') format('woff2'),
-       url('/fonts/Roboto-Regular.woff') format('woff');
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.woff2") format("woff2"),
+    url("/fonts/Roboto-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/fonts/Roboto-Bold.woff2') format('woff2'),
-       url('/fonts/Roboto-Bold.woff') format('woff');
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.woff2") format("woff2"),
+    url("/fonts/Roboto-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 /* Apply globally */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.gh-table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+
+/* Default (Desktop) */
+.gh-cell {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: #161b22;
+}
+
+/* Large laptops / small desktops */
+@media (max-width: 1280px) {
+  .gh-cell {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .gh-cell {
+    width: 16px;
+    height: 16px;
+  }
+
+  .gh-table {
+    border-spacing: 2.5px;
+  }
+}
+
+/* Large phones */
+@media (max-width: 768px) {
+  .gh-cell {
+    width: 14px;
+    height: 14px;
+  }
+
+  .gh-table {
+    border-spacing: 2px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .gh-cell {
+    width: 12px;
+    height: 12px;
+  }
+
+  .gh-table {
+    border-spacing: 2px;
+  }
+}
+
+
+/* GitHub official colors */
+.gh-0 {
+  background-color: #161b22;
+}
+.gh-1 {
+  background-color: #0e4429;
+}
+.gh-2 {
+  background-color: #006d32;
+}
+.gh-3 {
+  background-color: #26a641;
+}
+.gh-4 {
+  background-color: #39d353;
 }
