@@ -19,24 +19,31 @@ export default function Home() {
     "Backend Developer",
   ];
 
+  const typingSpeed = 120;
+  const deletingSpeed = 60;
+  const pauseAfterTyping = 1000;
+
   useEffect(() => {
     const current = roles[loopIndex % roles.length];
-    const timeout = setTimeout(
-      () => {
-        setText(
-          isDeleting
-            ? current.slice(0, text.length - 1)
-            : current.slice(0, text.length + 1)
-        );
 
-        if (!isDeleting && text === current) setIsDeleting(true);
-        if (isDeleting && text === "") {
+    let delay = isDeleting ? deletingSpeed : typingSpeed;
+
+    if (!isDeleting && text === current) {
+      delay = pauseAfterTyping;
+    }
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setText(current.slice(0, text.length + 1));
+        if (text.length + 1 === current.length) setIsDeleting(true);
+      } else {
+        setText(current.slice(0, text.length - 1));
+        if (text.length - 1 === 0) {
           setIsDeleting(false);
-          setLoopIndex(loopIndex + 1);
+          setLoopIndex((prev) => prev + 1);
         }
-      },
-      isDeleting ? 50 : 120
-    );
+      }
+    }, delay);
 
     return () => clearTimeout(timeout);
   }, [text, isDeleting, loopIndex]);
