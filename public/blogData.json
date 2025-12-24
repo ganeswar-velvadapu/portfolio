@@ -24,6 +24,19 @@
         "Docker", 
         "Networks"
       ]
+    }, 
+    {
+      "id": "payload-oauth",
+      "title": "Implementation of OAuth in payload",
+      "author": "Ganeswar Velvadapu",
+      "markdown": "/blogs/payload-oauth.md",
+      "published_date": "2025-12-24",
+      "shortDescription": "OAuth in payload CMS",
+      "tags": [
+        "Payload CMS",
+        "Nextjs", 
+        "OAuth"
+      ]
     }
   ]
 }
