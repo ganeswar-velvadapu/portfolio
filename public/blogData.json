@@ -37,6 +37,18 @@
         "Nextjs", 
         "OAuth"
       ]
+    },
+    {
+      "id": "flutter-setup-without-andriod-studio",
+      "title": "Flutter Installtion ",
+      "author": "Ganeswar Velvadapu",
+      "markdown": "/blogs/flutter-setup-without-andriod-studio.md",
+      "published_date": "2025-12-26",
+      "shortDescription": "Guide for installing flutter in linux",
+      "tags": [
+        "Flutter",
+        "Android Development"
+      ]
     }
   ]
 }
