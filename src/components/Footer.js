@@ -42,7 +42,7 @@ export default function Footer() {
               <Github size={22} />
             </a>
             <a
-              href="https://hardcover.app/@ganeswar1109"
+              href="https://hardcover.app/ganeswar-velvadapu"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors duration-200"
