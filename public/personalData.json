@@ -4,7 +4,7 @@
       "degree": "B.Tech Materials Science & Metallurgical Engineering",
       "institution": "IIT Hyderabad",
       "year": "2027",
-      "cgpa": "7.51"
+      "cgpa": "7.59"
     },
     {
       "degree": "XII (Board of Intermediate Education)",
@@ -22,11 +22,11 @@
   "experience": [
     {
       "role": "Web Developer",
-      "company": "MSME Department, Civil Department, Smith Lab, Smart X",
+      "company": "Web Developer – MSME, Civil Depts. & Smith, SmartX Labs",
       "location": "IIT Hyderabad",
       "points": [
-        "Integrated a leading open-source admin panel, customizing the Next.js frontend to unify content management across IIT Hyderabad departments",
-        "Containerized the full application stack using Docker and configured an NGINX reverse proxy for secure, scalable deployment"
+        "Architected an integrated payload CMS, unifying content delivery for the MSME and Civil departments alongside the Smith and SmartX research labs",
+        "Containerized the full application stack using Docker and configured an NGINX reverse proxy for secure, scalable deployment."
       ]
     },
     {
