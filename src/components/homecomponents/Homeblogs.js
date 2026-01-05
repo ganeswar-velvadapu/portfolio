@@ -16,12 +16,12 @@ const Homeblogs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <div className="md:flex-1 max-w-full lg:max-w-6xl w-full mx-auto ">
           {/* Section Title */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 sm:mb-6 text-white text-center lg:text-left px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl  font-bold tracking-tight mb-4 text-white text-center lg:text-left px-2">
             Blogs
           </h2>
 
           {/* Divider */}
-          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-gray-600 to-gray-400 mb-28 mx-auto lg:mx-0"></div>
+          <div className="w-16 sm:w-20 h-1  mb-8 sm:mb-12 mx-auto lg:mx-0"></div>
 
           {/* Empty State (if no blogs) */}
           {latestBlogs.length === 0 && (

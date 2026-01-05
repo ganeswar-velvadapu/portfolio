@@ -5,49 +5,16 @@ import HomeAbout from "@/components/homecomponents/HomeAbout";
 import Homeblogs from "@/components/homecomponents/Homeblogs";
 import HomeHero from "@/components/homecomponents/HomeHero";
 import HomeProjects from "@/components/homecomponents/HomeProjects";
-import ScrollRevealName from "@/components/homecomponents/ScrollReval";
+import CursorRevealName from "@/components/homecomponents/ScrollReval";
 
 export default function Home() {
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [loopIndex, setLoopIndex] = useState(0);
   const [totalContributions, setTotalContributions] = useState(0);
 
-  const roles = [
-    "Cybersecurity Enthusiast",
-    "DevOps Practitioner",
-    "Backend Developer",
-  ];
+  
 
-  const typingSpeed = 120;
-  const deletingSpeed = 60;
-  const pauseAfterTyping = 1000;
+  
 
-  useEffect(() => {
-    const current = roles[loopIndex % roles.length];
-
-    let delay = isDeleting ? deletingSpeed : typingSpeed;
-
-    if (!isDeleting && text === current) {
-      delay = pauseAfterTyping;
-    }
-
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setText(current.slice(0, text.length + 1));
-        if (text.length + 1 === current.length) setIsDeleting(true);
-      } else {
-        setText(current.slice(0, text.length - 1));
-        if (text.length - 1 === 0) {
-          setIsDeleting(false);
-          setLoopIndex((prev) => prev + 1);
-        }
-      }
-    }, delay);
-
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, loopIndex]);
-
+  
   const [weeks, setWeeks] = useState([]);
   const [year, setYear] = useState(new Date().getFullYear());
 
@@ -111,8 +78,8 @@ export default function Home() {
   return (
     <div className="bg-zinc-900 text-white">
       <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-12 px-6">
-        <ScrollRevealName />
-        <HomeHero text={text} />
+        <CursorRevealName/>
+        <HomeHero />
         <HomeAbout />
       </section>
 
@@ -120,10 +87,10 @@ export default function Home() {
       <Homeblogs />
 
       {/* GitHub Contributions */}
-      <div className="px-6 py-24">
+      <div className="px-6 py-16">
         <div className="max-w-6xl mx-auto flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-lg font-semibold">GitHub Contributions</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl  font-bold">GitHub Contributions</h2>
             <p className="text-sm text-zinc-400">
               {totalContributions} contributions in {year}
             </p>
