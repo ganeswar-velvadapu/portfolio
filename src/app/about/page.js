@@ -12,9 +12,8 @@ const AboutPage = () => {
     <div className="min-h-screen bg-zinc-900 py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Education Section */}
-        <section className="mb-16 mt-10 sm:mb-20">
+        <section className="mb-16 mt-14 sm:mb-20">
           <div className="flex items-center gap-3 mb-6 sm:mb-8">
-            <GraduationCap className="text-white" size={28} />
             <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white">
               Education
             </h2>

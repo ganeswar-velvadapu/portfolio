@@ -17,10 +17,8 @@ const BlogsPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
         <div className="mb-12 mt-10 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-white text-center lg:text-left">
-            All Blogs
-          </h1>
-          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-gray-600 to-gray-400 mx-auto lg:mx-0"></div>
+          <div className="w-20 sm:w-24 h-1 mx-auto lg:mx-0"></div>
+         
         </div>
 
         <div>
