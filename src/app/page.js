@@ -1,20 +1,10 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
-import HomeAbout from "@/components/homecomponents/HomeAbout";
 import Homeblogs from "@/components/homecomponents/Homeblogs";
 import HomeHero from "@/components/homecomponents/HomeHero";
 import HomeProjects from "@/components/homecomponents/HomeProjects";
-import CursorRevealName from "@/components/homecomponents/ScrollReval";
-
+import React, { useEffect, useState } from "react";
 export default function Home() {
   const [totalContributions, setTotalContributions] = useState(0);
-
-  
-
-  
-
-  
   const [weeks, setWeeks] = useState([]);
   const [year, setYear] = useState(new Date().getFullYear());
 
@@ -77,10 +67,8 @@ export default function Home() {
 
   return (
     <div className="bg-zinc-900 text-white">
-      <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-12 px-6">
-        <CursorRevealName/>
+      <section className="min-h-screen">
         <HomeHero />
-        <HomeAbout />
       </section>
 
       <HomeProjects />

@@ -1,31 +1,6 @@
 {
   "blogs": [
     {
-      "id": "docker-basics",
-      "title": "Docker 101 - Getting Started",
-      "author": "Ganeswar Velvadapu",
-      "markdown": "/blogs/docker-101.md",
-      "published_date": "2025-10-07",
-      "shortDescription": "Docker for beginners",
-      "tags": [
-        "Devops",
-        "Docker"
-      ]
-    },
-    {
-      "id": "docker-networks",
-      "title": "Docker Networking - A Deep Dive",
-      "author": "Ganeswar Velvadapu",
-      "markdown": "/blogs/docker-networks.md",
-      "published_date": "2025-10-18",
-      "shortDescription": "Networking in docker",
-      "tags": [
-        "Devops",
-        "Docker", 
-        "Networks"
-      ]
-    }, 
-    {
       "id": "payload-oauth",
       "title": "Implementation of OAuth in payload",
       "author": "Ganeswar Velvadapu",

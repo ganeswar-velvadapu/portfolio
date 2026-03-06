@@ -29,7 +29,7 @@ export default function Portfolio() {
         }`}
       >
         <div
-          className={`max-w-6xl mx-auto transition-all duration-500 ease-out ${
+          className={`max-w-7xl mx-auto transition-all duration-500 ease-out ${
             scrolled
               ? 'px-4 md:px-6'
               : 'px-6 md:px-10'
