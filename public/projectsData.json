@@ -1,6 +1,16 @@
 {
     "projects": [
         {
+            "name": "Startup Fair",
+            "description": "A live investment simulation organized by the E-Cell where each participant receives ₹10,000 in virtual capital to invest in various startups. As participants invest, the valuation of each startup increases dynamically. The startup that achieves the highest valuation by the end of the game is declared the winner.",
+            "github": "https://github.com/E-Cell-IITH/startup-fair-2026",
+            "technologies": [
+                "React",
+                "Go Lang",
+                "PostgreSQL"
+            ]
+        },
+        {
             "name": "Solana Token Dashboard",
             "description": "Real Time Solana Token Aggregator is a service that fetches and streams real time meme coin data from multiple DEX sources, DexScreener and GeckoTerminal (Pools endpoint).",
             "github": "https://github.com/ganeswar-velvadapu/eterna-labs-ps1",
